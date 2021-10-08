@@ -6,16 +6,26 @@ import Card from "./Card";
 import "./App.css";
 
 function App() {
-  const [tip, setTip] = useState("0.00");
+  const [tipAmount, setTipAmount] = useState("0.00");
   const [total, setTotal] = useState("0.00");
-  function handleTip(bill) {
-    // console.log("====================================");
-    setTip(bill);
-    // console.log("====================================");
+
+  const [bill, setBill] = useState(0);
+  // const [tip, setTip] = useState(0);
+  // const [numOfPeople, setPeople] = useState(0);
+
+  function handleBill(bill) {
+    console.log("bill", bill);
+    setBill(bill);
+  }
+
+  function handleTip(tip) {
+    console.log("tip", tip);
+    console.log("bill * tip", (bill * tip) / 100);
+    setTipAmount((bill * tip) / 100);
   }
 
   function handleTotal(numOfPeople) {
-    setTotal(total);
+    setTotal(tipAmount * numOfPeople);
   }
 
   return (
@@ -24,12 +34,14 @@ function App() {
       <Card>
         <div className="row card-content">
           <div className="column">
-            <UserInput onAdd={handleTip} title="Bill" />
-            <TipSelection />
+            {/* <form> */}
+            <UserInput onAdd={handleBill} title="Bill" />
+            <TipSelection onTipSelection={handleTip} />
             <UserInput onAdd={handleTotal} title="Number of People" />
+            {/* </form> */}
           </div>
           <div className="column right-column">
-            <ResultCard tipAmount={tip} total={total} />
+            <ResultCard tipAmount={tipAmount} total={total} />
           </div>
         </div>
       </Card>

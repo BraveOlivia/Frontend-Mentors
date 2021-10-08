@@ -2,22 +2,24 @@ import React, { useState } from "react";
 import "./Button.css";
 
 const Button = (props) => {
-  const [isActive, setActive] = useState(false);
+  const [activeBtn, setActiveBtn] = useState(0);
 
   function handleClick(event) {
-    setActive((prev) => !prev);
-    props.onSelected(isActive);
+    setActiveBtn(props.id);
+    props.onSelected(props.value);
+    // event.preventDefault();
+    console.log("activeBtn: " + activeBtn);
   }
-
-  // function onClick(event) {}
 
   return (
     <button
       onClick={handleClick}
       className="btn"
-      style={isActive ? { backgroundColor: "hsl(172, 67%, 45%)" } : {}}
+      style={
+        props.id === activeBtn ? { backgroundColor: "hsl(172, 67%, 45%)" } : {}
+      }
     >
-      {props.value}
+      {props.value}%
     </button>
   );
 };
