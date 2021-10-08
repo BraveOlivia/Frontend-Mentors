@@ -1,0 +1,14 @@
+.tip-figure {
+  size: 12rem;
+  color: hsl(172, 67%, 45%);
+}
+
+.reset-btn {
+  margin: 20px;
+  color: hsl(183, 100%, 15%);
+  width: 80%;
+  background-color: hsl(172, 67%, 45%);
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+}

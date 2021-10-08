@@ -1,0 +1,32 @@
+/* Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.input-box {
+  position: relative;
+}
+
+input {
+  display: block;
+  border: 0px;
+  background: hsl(189, 41%, 97%);
+  padding: 10px 10px 10px 20px;
+  width: 85%;
+}
+
+.unit {
+  position: absolute;
+  display: block;
+  left: 5px;
+  top: 10px;
+  color: hsl(186, 14%, 43%);
+  /* z-index: 9; */
+}
