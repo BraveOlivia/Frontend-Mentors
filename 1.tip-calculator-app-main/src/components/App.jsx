@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import UserInput from "./input/UserInput";
 import TipSelection from "./input/TipSelection";
 import ResultCard from "./output/ResultCard";
-import Card from "./Card";
-import "./App.css";
 
 function App() {
   const [tipAmount, setTipAmount] = useState("0.00");
@@ -34,18 +32,18 @@ function App() {
         <span>SPLI</span>
         <span>TTER</span>
       </header>
-      <Card>
-        <div className="row card-content">
-          <div className="column">
-            <UserInput onAdd={handleBill} title="Bill" />
-            <TipSelection onTipSelection={handleTip} />
-            <UserInput onAdd={handleTotal} title="Number of People" />
-          </div>
-          <div className="column right-column">
-            <ResultCard tipAmount={tipAmount} total={total} />
-          </div>
+      {/* <Card> */}
+      <div className="row card-content">
+        <div className="column">
+          <UserInput onAdd={handleBill} title="Bill" />
+          <TipSelection onTipSelection={handleTip} />
+          <UserInput onAdd={handleTotal} title="Number of People" />
         </div>
-      </Card>
+        <div className="column right-column">
+          <ResultCard tipAmount={tipAmount} total={total} />
+        </div>
+      </div>
+      {/* </Card> */}
     </body>
   );
 }
