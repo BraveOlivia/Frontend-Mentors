@@ -30,15 +30,16 @@ function App() {
 
   return (
     <body>
-      <header>SPLITTER</header>
+      <header>
+        <span>SPLI</span>
+        <span>TTER</span>
+      </header>
       <Card>
         <div className="row card-content">
           <div className="column">
-            {/* <form> */}
             <UserInput onAdd={handleBill} title="Bill" />
             <TipSelection onTipSelection={handleTip} />
             <UserInput onAdd={handleTotal} title="Number of People" />
-            {/* </form> */}
           </div>
           <div className="column right-column">
             <ResultCard tipAmount={tipAmount} total={total} />
