@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import UserInput from "./input/UserInput";
 import TipSelection from "./input/TipSelection";
 import ResultCard from "./output/ResultCard";
+import "./App.css";
 
 function App() {
   const [tipAmount, setTipAmount] = useState("0.00");
   const [total, setTotal] = useState("0.00");
 
   const [bill, setBill] = useState(0);
-  // const [tip, setTip] = useState(0);
-  // const [numOfPeople, setPeople] = useState(0);
 
   function handleBill(bill) {
     console.log("bill", bill);
@@ -32,8 +31,7 @@ function App() {
         <span>SPLI</span>
         <span>TTER</span>
       </header>
-      {/* <Card> */}
-      <div className="row card-content">
+      <div className="card row card-content">
         <div className="column">
           <UserInput onAdd={handleBill} title="Bill" />
           <TipSelection onTipSelection={handleTip} />
@@ -43,7 +41,6 @@ function App() {
           <ResultCard tipAmount={tipAmount} total={total} />
         </div>
       </div>
-      {/* </Card> */}
     </body>
   );
 }
