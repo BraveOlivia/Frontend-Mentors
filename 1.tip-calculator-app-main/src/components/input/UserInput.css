@@ -20,6 +20,7 @@ input {
   background: hsl(189, 41%, 97%);
   padding: 10px 10px 10px 20px;
   width: 85%;
+  text-align: right;
 }
 
 .unit {
