@@ -1,23 +1,21 @@
 import React, { useState } from "react";
 import "./Button.css";
 
+// Handle the status of button, if clicked, change the color
 const Button = (props) => {
-  const [activeBtn, setActiveBtn] = useState(0);
+  const [active, setActive] = useState(false);
 
   function handleClick(event) {
-    setActiveBtn(props.id);
+    setActive((prev) => !prev);
     props.onSelected(props.value);
-    // event.preventDefault();
-    console.log("activeBtn: " + activeBtn);
+    event.preventDefault();
   }
 
   return (
     <button
       onClick={handleClick}
       className="btn"
-      style={
-        props.id === activeBtn ? { backgroundColor: "hsl(172, 67%, 45%)" } : {}
-      }
+      style={active ? { backgroundColor: "hsl(172, 67%, 45%)" } : {}}
     >
       {props.value}%
     </button>

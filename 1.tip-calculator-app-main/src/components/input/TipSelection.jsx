@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import SectionTitle from "./SectionTitle";
 import Button from "./Button";
 
 const TipSelection = (props) => {
+  const [activeBtn, setActiveBtn] = useState(0);
 
   function handleTip(tip) {
+    setActiveBtn(props.id);
+    console.log("====================================");
+    console.log(tip);
+    console.log("====================================");
     props.onTipSelection(tip);
   }
+
   return (
     <div>
       <SectionTitle title="Select Tip %" />
