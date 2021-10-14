@@ -18,19 +18,23 @@ header {
 }
 
 .card-content {
-  /* width: 60%; */
   margin: auto;
 }
 
 .row {
   display: flex;
+  flex-direction: row;
 }
 
 .column {
   flex: 50%;
-  width: 35%;
-  /* background-color: red; */
   padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
 }
 
 .right-column {

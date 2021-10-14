@@ -2,48 +2,42 @@ import React, { useState } from "react";
 import "./input/Button.css";
 
 const App2 = (props) => {
-  const [bill, setBill] = useState(0);
-  const [tip, setTip] = useState(0);
-  const [people, setPeople] = useState(0);
-
-  //   const [amoutOfTip, setAmoutOfTip] = useState("0.00");
-  //   const [totalTip, setTotalTip] = useState("0.00");
+  const [bill, setBill] = useState("");
+  const [tip, setTip] = useState("");
+  const [people, setPeople] = useState("");
 
   const [isCustom, setIsCustom] = useState(false);
-
   const [activeBtn, setActiveBtn] = useState(0);
 
   function handleBill(event) {
     setBill(event.target.value);
-    // console.log("bill", bill);
   }
 
   function handleTip(event) {
     const { name, value } = event.target;
     setTip(value);
-    // console.log("name", name);
-    // setAmoutOfTip((bill * value) / 100);
     setActiveBtn(name);
   }
 
   function handlePeople(event) {
     setPeople(event.target.value);
-    // setTotalTip(event.target.value * amoutOfTip);
   }
 
   function handleCustomTip() {
     setIsCustom(true);
     setActiveBtn(0);
   }
+
   function handleReset() {
-    setBill(0);
-    setPeople(0);
-    setTip(0);
-    // setAmoutOfTip("0.00");
-    // setTotalTip("0.00");
+    setBill("");
+    setPeople("");
+    setTip("");
     setActiveBtn(0);
   }
 
+  function calTip() {
+    return ((tip * people) / 100).toFixed(2);
+  }
   return (
     <div>
       <h1>Bill {bill}</h1>
@@ -104,13 +98,14 @@ const App2 = (props) => {
       {isCustom && <input type="number" onChange={handleTip} value={tip} />}
 
       <h1>Number of people</h1>
+      {people === "0" && <h1>Can't be zero</h1>}
       <input type="number" onChange={handlePeople} value={people} />
 
       <h1>Amount of Tip</h1>
-      <h2>{(bill * tip) / 100}</h2>
+      <h2>$ {((bill * tip) / 100).toFixed(2)}</h2>
 
       <h1>Total</h1>
-      <h2>{((bill * tip) / 100) * people}</h2>
+      <h2>$ {(((bill * tip) / 100) * people).toFixed(2)}</h2>
 
       <button onClick={handleReset}>Reset</button>
     </div>

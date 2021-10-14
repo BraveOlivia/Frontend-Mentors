@@ -5,24 +5,20 @@ import ResultCard from "./output/ResultCard";
 import "./App.css";
 
 function App() {
-  const [tipAmount, setTipAmount] = useState("0.00");
-  const [total, setTotal] = useState("0.00");
-
-  const [bill, setBill] = useState(0);
+  const [bill, setBill] = useState("");
+  const [tip, setTip] = useState("");
+  const [people, setPeople] = useState("");
 
   function handleBill(bill) {
-    console.log("bill", bill);
     setBill(bill);
   }
 
   function handleTip(tip) {
-    console.log("tip", tip);
-    console.log("bill * tip", (bill * tip) / 100);
-    setTipAmount((bill * tip) / 100);
+    setTip(tip);
   }
 
-  function handleTotal(numOfPeople) {
-    setTotal(tipAmount * numOfPeople);
+  function handlePeople(people) {
+    setPeople(people);
   }
 
   return (
@@ -35,10 +31,13 @@ function App() {
         <div className="column">
           <UserInput onAdd={handleBill} title="Bill" />
           <TipSelection onTipSelection={handleTip} />
-          <UserInput onAdd={handleTotal} title="Number of People" />
+          <UserInput onAdd={handlePeople} title="Number of People" />
         </div>
         <div className="column right-column">
-          <ResultCard tipAmount={tipAmount} total={total} />
+          <ResultCard
+            tipAmount={(tip * bill) / 100}
+            total={(tip * bill * people) / 100}
+          />
         </div>
       </div>
     </body>
