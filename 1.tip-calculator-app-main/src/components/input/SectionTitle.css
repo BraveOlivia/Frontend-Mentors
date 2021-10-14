@@ -1,0 +1,11 @@
+.section-title {
+  color: hsl(183, 100%, 15%);
+  text-align: left;
+  margin-bottom: 5px;
+  padding: 0;
+}
+
+.invalid-alert {
+  color: red;
+  float: right;
+}

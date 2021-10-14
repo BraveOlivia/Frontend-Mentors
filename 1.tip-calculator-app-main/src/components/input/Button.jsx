@@ -3,30 +3,35 @@ import "./Button.css";
 
 // Handle the status of button, if clicked, change the color
 const Button = (props) => {
-  const [active, setActive] = useState(false);
+  const [isCustom, setIsCustom] = useState(false);
 
   function handleClick(event) {
-    setActive((prev) => !prev);
-    props.onSelected(props.value);
-    event.preventDefault();
+    const { value } = event.target;
+    props.onSelected(value);
+
+    if (value === "Custom") {
+      setIsCustom(true);
+    }
   }
 
-  return (
-    <button
-      onClick={handleClick}
-      className="btn"
-      style={active ? { backgroundColor: "hsl(172, 67%, 45%)" } : {}}
-    >
-      {props.value}%
-    </button>
-  );
+  if (!isCustom) {
+    return (
+      <button
+        name={props.id}
+        value={props.value}
+        onClick={handleClick}
+        className="btn"
+        style={{
+          backgroundColor: props.active && "hsl(172, 67%, 45%)",
+        }}
+      >
+        {props.value}
+        {props.id !== "6" && "%"}
+      </button>
+    );
+  } else {
+    return <input className="btn" type="number" />;
+  }
 };
-
-// When selected, change the color
-// pass value to app
-
-// Enable user to define a customed tip
-
-// only one button can be selected at a time
 
 export default Button;

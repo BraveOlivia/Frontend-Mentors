@@ -2,9 +2,10 @@
   width: 30%;
   height: 25%;
   padding: 0.5rem 0.5rem;
-  margin: 0.5rem 0.5rem 0 0;
+  margin: 0.5rem 0.5rem 0.5rem 0;
   color: white;
   border: none;
   border-radius: 3px;
   background-color: hsl(183, 100%, 15%);
+  float: left;
 }

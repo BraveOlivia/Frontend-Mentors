@@ -3,11 +3,17 @@ import ResultCard from "./ResultBar";
 import "./ResultCard.css";
 
 const SectionTitle = (props) => {
+  function resetHandler() {
+    props.onReset();
+  }
+
   return (
     <div>
       <ResultCard title="Tip Amount" tip={props.tipAmount} />
       <ResultCard title="Total" tip={props.total} />
-      <button className="reset-btn">RESET</button>
+      <button onClick={resetHandler} className="reset-btn">
+        RESET
+      </button>
     </div>
   );
 };

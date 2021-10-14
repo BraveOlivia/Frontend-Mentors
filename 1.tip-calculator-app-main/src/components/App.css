@@ -9,6 +9,10 @@ header {
   color: hsl(183, 100%, 15%);
 }
 
+span {
+  letter-spacing: 5px;
+}
+
 .card {
   width: 70%;
   margin: auto;
@@ -40,9 +44,4 @@ header {
 .right-column {
   background-color: hsl(183, 100%, 15%);
   border-radius: 10px;
-}
-
-.section-title {
-  color: hsl(183, 100%, 15%);
-  margin-bottom: 5px;
 }

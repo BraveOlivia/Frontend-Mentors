@@ -35,14 +35,12 @@ const App2 = (props) => {
     setActiveBtn(0);
   }
 
-  function calTip() {
-    return ((tip * people) / 100).toFixed(2);
-  }
   return (
     <div>
-      <h1>Bill {bill}</h1>
+      <h1>Bill</h1>
       <input type="number" onChange={handleBill} value={bill} />
-      <h1>Tip {tip}</h1>
+
+      <h1>Tip</h1>
       <button
         name="1"
         value="5"

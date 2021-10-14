@@ -4,26 +4,35 @@ import SectionTitle from "./SectionTitle";
 import "./UserInput.css";
 
 const UserInput = (props) => {
-  const [inputValue, setValue] = useState(0);
+  const [invalidInput, setInvalid] = useState(false);
 
   function inputHandler(event) {
-    setValue((prev) => event.target.value);
-    props.onAdd(inputValue);
-    props.onClicked(props.id);
+    const { name, value } = event.target;
+    props.onAdd(value); // Can't use {inputValue} here
+
+    if (name === "Number of People" && value === "0") {
+      setInvalid(true);
+    } else {
+      setInvalid(false);
+    }
   }
 
   return (
     <div>
-      <SectionTitle title={props.title} />
+      <SectionTitle title={props.title} invalid={invalidInput} />
+
       <div className="input-box">
-        <input type="number" onChange={inputHandler} value={inputValue} />
+        <input
+          name={props.title}
+          type="number"
+          onChange={inputHandler}
+          value={props.value}
+          placeholder="0"
+        />
         <span className="unit">{props.title === "Bill" ? "$" : "P"}</span>
       </div>
     </div>
   );
 };
-
-// the position of module
-// Number of people can only be interger
 
 export default UserInput;
