@@ -30,17 +30,17 @@ function App() {
   return (
     <div>
       <header>
-        <span>SPLI</span>
+        <span className="logo">SPLI</span>
         <br />
-        <span>TTER</span>
-        <h1>
+        <span className="logo">TTER</span>
+        {/* <h1>
           Bill {bill}; Tip {tip}; people {people}
-        </h1>
+        </h1> */}
       </header>
       <div className="card row card-content">
         <div className="column">
           <UserInput onAdd={handleBill} title="Bill" value={bill} />
-          <TipSelection onSelected={handleTip} />
+          <TipSelection onSelected={handleTip} selected={tip} />
           <UserInput
             onAdd={handlePeople}
             title="Number of People"
@@ -50,7 +50,11 @@ function App() {
         <div className="column right-column">
           <ResultCard
             tipAmount={((bill * tip) / 100).toFixed(2)}
-            total={((tip * bill * people) / 100).toFixed(2)}
+            total={
+              bill === "" && tip === "" && people === ""
+                ? "0.00"
+                : ((bill * (1 + tip / 100)) / people).toFixed(2)
+            }
             onReset={resetHandler}
           />
         </div>

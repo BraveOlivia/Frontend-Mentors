@@ -12,14 +12,18 @@ const TipSelection = (props) => {
   function handleActive(event) {
     const { name, value } = event.target;
     setActiveBtn(name);
-
     console.log(name, value);
+  }
+
+  function handleCustomTip(event) {
+    const { value } = event.target;
+    props.onSelected(value);
   }
 
   return (
     <div>
       <SectionTitle title="Select Tip %" />
-
+      {/* {props.selected === 0 ? setActiveBtn(7) : null} */}
       <div onClick={handleActive}>
         <Button
           id="1"
@@ -61,7 +65,13 @@ const TipSelection = (props) => {
         />
       </div>
       <div onClick={handleActive}>
-        <Button id="6" value="Custom" onSelected={handleTip} />
+        <input
+          className="input-btn"
+          placeholder="Custom"
+          type="number"
+          onChange={handleCustomTip}
+          onSelected={handleTip}
+        />
       </div>
     </div>
   );

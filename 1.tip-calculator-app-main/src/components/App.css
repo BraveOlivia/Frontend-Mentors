@@ -9,7 +9,7 @@ header {
   color: hsl(183, 100%, 15%);
 }
 
-span {
+.logo {
   letter-spacing: 5px;
 }
 
@@ -45,3 +45,4 @@ span {
   background-color: hsl(183, 100%, 15%);
   border-radius: 10px;
 }
+
