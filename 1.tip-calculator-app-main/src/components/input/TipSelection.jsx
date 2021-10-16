@@ -4,6 +4,7 @@ import Button from "./Button";
 
 const TipSelection = (props) => {
   const [activeBtn, setActiveBtn] = useState(0);
+  const [customTip, setCustomTip] = useState("");
 
   function handleTip(tip) {
     props.onSelected(tip);
@@ -11,19 +12,22 @@ const TipSelection = (props) => {
 
   function handleActive(event) {
     const { name, value } = event.target;
-    setActiveBtn(name);
+    // if (name !== "6") {
+      setActiveBtn(name);
+    // }
     console.log(name, value);
   }
 
   function handleCustomTip(event) {
     const { value } = event.target;
     props.onSelected(value);
+    setCustomTip(value);
   }
 
   return (
     <div>
       <SectionTitle title="Select Tip %" />
-      {/* {props.selected === 0 ? setActiveBtn(7) : null} */}
+      {/* {props.selected === "" ? setActiveBtn(7) : null} */}
       <div onClick={handleActive}>
         <Button
           id="1"
@@ -71,6 +75,7 @@ const TipSelection = (props) => {
           type="number"
           onChange={handleCustomTip}
           onSelected={handleTip}
+          value={customTip}
         />
       </div>
     </div>

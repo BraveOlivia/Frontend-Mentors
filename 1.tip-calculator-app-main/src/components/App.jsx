@@ -22,9 +22,9 @@ function App() {
   }
 
   function resetHandler() {
-    setBill(0);
+    setBill("");
     setTip(0);
-    setPeople(0);
+    setPeople("");
   }
 
   return (
@@ -33,14 +33,14 @@ function App() {
         <span className="logo">SPLI</span>
         <br />
         <span className="logo">TTER</span>
-        {/* <h1>
-          Bill {bill}; Tip {tip}; people {people}
-        </h1> */}
       </header>
       <div className="card row card-content">
         <div className="column">
           <UserInput onAdd={handleBill} title="Bill" value={bill} />
-          <TipSelection onSelected={handleTip} selected={tip} />
+
+          {/* render a new tip selection to reset the status */}
+          {tip === 0 && <TipSelection onSelected={handleTip} />}
+          {tip !== 0 && <TipSelection onSelected={handleTip} />}
           <UserInput
             onAdd={handlePeople}
             title="Number of People"
