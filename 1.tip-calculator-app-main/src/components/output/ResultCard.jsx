@@ -11,7 +11,7 @@ const SectionTitle = (props) => {
     <div className="center">
       <ResultCard title="Tip Amount" tip={props.tipAmount} />
       <ResultCard title="Total" tip={props.total} />
-      <button onClick={resetHandler} className="reset-btn">
+      <button className="reset-btn" onClick={resetHandler}>
         RESET
       </button>
     </div>
