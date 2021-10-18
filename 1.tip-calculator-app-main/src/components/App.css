@@ -14,9 +14,10 @@ header {
 }
 
 .card {
-  width: 70%;
+  /* //change the width to narrow the app */
+  width: 60%;
   margin: auto;
-  padding: 3%;
+  padding: 2%;
   background-color: white;
   border-radius: 25px;
 }

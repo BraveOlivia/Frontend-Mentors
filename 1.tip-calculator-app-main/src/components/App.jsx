@@ -49,11 +49,14 @@ function App() {
         </div>
         <div className="column right-column">
           <ResultCard
-            tipAmount={((bill * tip) / 100).toFixed(2)}
+          //fix the infinity and NaN issue
+          //just change the logic a little bit. 
+          //You should check the existence of bill, tip and people, and only get output when all of them exist
+            tipAmount={(bill && tip) ? ((bill * tip) / 100).toFixed(2) : "0.00"}
             total={
-              bill === "" && tip === "" && people === ""
-                ? "0.00"
-                : ((bill * (1 + tip / 100)) / people).toFixed(2)
+              (bill && tip && people)
+                ? ((bill * (1 + tip / 100)) / people).toFixed(2)
+                : "0.00"
             }
             onReset={resetHandler}
           />
