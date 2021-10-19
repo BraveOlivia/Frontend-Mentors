@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/tip-calculator/static/css/main.11bf42ee.chunk.css",
-    "main.js": "/tip-calculator/static/js/main.ec4b235b.chunk.js",
-    "main.js.map": "/tip-calculator/static/js/main.ec4b235b.chunk.js.map",
-    "runtime-main.js": "/tip-calculator/static/js/runtime-main.587fdcf8.js",
-    "runtime-main.js.map": "/tip-calculator/static/js/runtime-main.587fdcf8.js.map",
-    "static/js/2.3163928e.chunk.js": "/tip-calculator/static/js/2.3163928e.chunk.js",
-    "static/js/2.3163928e.chunk.js.map": "/tip-calculator/static/js/2.3163928e.chunk.js.map",
-    "index.html": "/tip-calculator/index.html",
-    "static/css/main.11bf42ee.chunk.css.map": "/tip-calculator/static/css/main.11bf42ee.chunk.css.map",
-    "static/js/2.3163928e.chunk.js.LICENSE.txt": "/tip-calculator/static/js/2.3163928e.chunk.js.LICENSE.txt"
+    "main.css": "/react-practice/tip-calculator/static/css/main.11bf42ee.chunk.css",
+    "main.js": "/react-practice/tip-calculator/static/js/main.ec4b235b.chunk.js",
+    "main.js.map": "/react-practice/tip-calculator/static/js/main.ec4b235b.chunk.js.map",
+    "runtime-main.js": "/react-practice/tip-calculator/static/js/runtime-main.d902d410.js",
+    "runtime-main.js.map": "/react-practice/tip-calculator/static/js/runtime-main.d902d410.js.map",
+    "static/js/2.3163928e.chunk.js": "/react-practice/tip-calculator/static/js/2.3163928e.chunk.js",
+    "static/js/2.3163928e.chunk.js.map": "/react-practice/tip-calculator/static/js/2.3163928e.chunk.js.map",
+    "index.html": "/react-practice/tip-calculator/index.html",
+    "static/css/main.11bf42ee.chunk.css.map": "/react-practice/tip-calculator/static/css/main.11bf42ee.chunk.css.map",
+    "static/js/2.3163928e.chunk.js.LICENSE.txt": "/react-practice/tip-calculator/static/js/2.3163928e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.587fdcf8.js",
+    "static/js/runtime-main.d902d410.js",
     "static/js/2.3163928e.chunk.js",
     "static/css/main.11bf42ee.chunk.css",
     "static/js/main.ec4b235b.chunk.js"
