@@ -10,14 +10,13 @@ const UserInput = (props) => {
     const { name, value } = event.target;
     props.onAdd(value); // Can't use {inputValue} here
 
-    
     if (name === "Number of People" && value === "0") {
       setInvalid(true);
     } else {
       setInvalid(false);
     }
   }
- 
+
   return (
     <div>
       <SectionTitle title={props.title} invalid={invalidInput} />
@@ -30,7 +29,7 @@ const UserInput = (props) => {
           value={props.value}
           placeholder="0"
         />
-        <span className="unit">{props.title === "Bill" ? "$" : "P"}</span>
+        <span className="unit">{props.title === "Bill" ? "$" : "p"}</span>
       </div>
     </div>
   );
